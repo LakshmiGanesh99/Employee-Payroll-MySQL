@@ -39,3 +39,11 @@ WHERE gender = 'F' GROUP BY gender;
 SELECT MAX(salary) FROM employee_payroll
 WHERE gender = 'M' GROUP BY gender;
 SELECT gender, AVG(salary) FROM employee_payroll GROUP BY GENDER;
+
+#UC8 Ability to extend employee_payroll data to store employee information like employee phone, address and department
+
+ALTER TABLE employee_payroll 
+ADD COLUMN phone VARCHAR(13) AFTER name,
+ADD COLUMN address VARCHAR(250) DEFAULT 'India' AFTER phone,
+ADD COLUMN department VARCHAR(150) NOT NULL AFTER address;
+SELECT * FROM employee_payroll;

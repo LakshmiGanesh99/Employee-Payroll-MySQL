@@ -11,3 +11,8 @@ salary DOUBLE NOT NULL,
 start DATE NOT NULL,
 PRIMARY KEY (id)
 );
+
+#UC3 inserting values
+INSERT INTO employee_payroll (name, salary, start) VALUES
+('Ganesh', 10000.00, '2018-04-01'), ('Rajan', 30000.00, '2019-04-01'),
+('Priya', 15000.00, '2020-04-01');

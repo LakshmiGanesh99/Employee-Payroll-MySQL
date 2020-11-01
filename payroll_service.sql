@@ -41,9 +41,17 @@ WHERE gender = 'M' GROUP BY gender;
 SELECT gender, AVG(salary) FROM employee_payroll GROUP BY GENDER;
 
 #UC8 Ability to extend employee_payroll data to store employee information like employee phone, address and department
-
 ALTER TABLE employee_payroll 
 ADD COLUMN phone VARCHAR(13) AFTER name,
 ADD COLUMN address VARCHAR(250) DEFAULT 'India' AFTER phone,
 ADD COLUMN department VARCHAR(150) NOT NULL AFTER address;
+SELECT * FROM employee_payroll;
+
+#UC9 
+ALTER TABLE employee_payroll 
+ADD COLUMN basic_pay DOUBLE NOT NULL AFTER gender,
+ADD COLUMN deductions DOUBLE NOT NULL AFTER basic_pay,
+ADD COLUMN taxable_pay DOUBLE NOT NULL AFTER deductions,
+ADD COLUMN tax DOUBLE NOT NULL AFTER taxable_pay,
+ADD COLUMN net_pay DOUBLE NOT NULL AFTER tax;
 SELECT * FROM employee_payroll;

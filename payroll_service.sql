@@ -145,7 +145,7 @@ select gender,COUNT(*) from employee_details group by gender;
 SELECT name,basic_pay,deductions,taxable_pay,tax,net_pay 
 FROM employee_details JOIN payroll 
 ON employee_details.payroll_id = payroll.payroll_id
-HAVING name = 'Bill';              
+HAVING name = 'Bill';               
 
 SELECT start_date,name,basic_pay,deductions,taxable_pay,tax,net_pay 
 FROM employee_details JOIN payroll 

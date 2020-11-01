@@ -19,3 +19,7 @@ INSERT INTO employee_payroll (name, salary, start) VALUES
 
 #UC4 retrieving data
 SELECT * FROM employee_payroll;
+
+#UC5 viewing data with conditions
+SELECT salary FROM employee_payroll WHERE name = 'Ganesh'; SELECT salary FROM employee_payroll
+WHERE start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());

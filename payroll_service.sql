@@ -23,3 +23,10 @@ SELECT * FROM employee_payroll;
 #UC5 viewing data with conditions
 SELECT salary FROM employee_payroll WHERE name = 'Ganesh'; SELECT salary FROM employee_payroll
 WHERE start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
+
+#UC6 adding a gender colum and adding data for each row
+SET SQL_SAFE_UPDATES=0;
+ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name; 
+UPDATE employee_payroll SET gender = 'M' WHERE name = 'Ganesh'; 
+UPDATE employee_payroll SET gender = 'M' WHERE name = 'Rajan'; 
+UPDATE employee_payroll SET gender = 'F' WHERE name = 'Priya';

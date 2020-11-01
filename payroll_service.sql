@@ -30,3 +30,12 @@ ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
 UPDATE employee_payroll SET gender = 'M' WHERE name = 'Ganesh'; 
 UPDATE employee_payroll SET gender = 'M' WHERE name = 'Rajan'; 
 UPDATE employee_payroll SET gender = 'F' WHERE name = 'Priya';
+
+#UC7 doing some basinc operations
+SELECT SUM(salary) FROM employee_payroll WHERE gender = 'F' GROUP BY gender; SELECT SUM(salary) FROM employee_payroll WHERE gender = 'M' GROUP BY gender; SELECT AVG(salary) FROM employee_payroll WHERE gender = 'F' GROUP BY gender; SELECT AVG(salary) FROM employee_payroll
+WHERE gender = 'M' GROUP BY gender;
+SELECT MIN(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
+SELECT MAX(salary) FROM employee_payroll
+WHERE gender = 'M' GROUP BY gender;
+SELECT gender, AVG(salary) FROM employee_payroll GROUP BY GENDER;
